@@ -1,78 +1,86 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Deliveboo-final-project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### Riproduzione web app per ordinare cibo a domicilio.
 
-## About Laravel
+#### NAVIGAZIONE
+- [Home page](#home-page)
+- [Pagina ristoratore vista cliente](#pagina-ristorante-vista-cliente)
+  - [Checkout](#checkout)
+  - [Pagamento](#pagamento)
+  - [Mail di conferma al cliente](#mail-di-conferma-al-cliente)
+- [Ordine](#ordine)
+- [Registrazione](#registrazione)
+- [Pagina ristoratore vista proprietario](#pagina-ristorante-vista-proprietario)
+  - [Aggiungere o modificare piatto](#aggiungere-o-modificare-piatto)
+  - [Lista ordini ricevuti](#lista-ordini-ricevuti)
+  - [Statistiche](#statistiche)
+  - [Mail di conferma al ristoratore](#mail-di-conferma-al-ristoratore)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### HOME PAGE
+![Alt text](./Deliveboo7/screenshots/home_1.png?raw=true "home")
+![Alt text](./Deliveboo7/screenshots/home_2.png?raw=true "home")
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Deliveboo permette di cercare uno specifico ristorante o di cercarne uno in base alla sua tipologia.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+#### PAGINA RISTORANTE VISTA CLIENTE
+![Alt text](./Deliveboo7/screenshots/restaurant_customer.png?raw=true "restaurant_customer")
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Accedendo alla pagina del ristorante scelto, il cliente può aggiungere al carello i piatti scelti nella quantità desiderata, che è possibile variare direttamente dal carrello stesso. Al cliente è sempre visibile il momentaneo costo totale dell'intero ordine, e quello di ogni singola voce. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+#### ORDINE
+- ##### CHECKOUT
+![Alt text](./Deliveboo7/screenshots/checkout.png?raw=true "checkout")
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Al cliente vengono richiesti alcuni dati, necessari per la consegna dell'ordine.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+- ##### PAGAMENTO
+![Alt text](./Deliveboo7/screenshots/payment.png?raw=true "pagamento")
 
-## Contributing
+Si passa al pagamento, integrato grazie a [Braintree](https://www.braintreepayments.com/it).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- ##### MAIL DI CONFERMA AL CLIENTE
+![Alt text](./Deliveboo7/screenshots/mail_customer.png?raw=true "mail_customer")
 
-## Code of Conduct
+Se il pagamento va a buon fine, il cliente riceve una mail di conferma dell'avvenuta presa in carico dell'ordine. Il servizio mail è stato integrato grazie a [Mailtrap](https://mailtrap.io/).
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+#### REGISTRAZIONE
+![Alt text](./Deliveboo7/screenshots/sign_in.png?raw=true "sign_in")
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Il ristoratore ha la possibilità di registrare la sua attività sul portale.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### PAGINA RISTORANTE VISTA PROPRIETARIO
+![Alt text](./Deliveboo7/screenshots/restaurant_owner1.png?raw=true "restaurant_owner")
+![Alt text](./Deliveboo7/screenshots/restaurant_owner2.png?raw=true "restaurant_owner")
+
+Il ristoratore, dalla pagine della sua attività, può vedere tutto il suo menu, compresi i prodotti che sceglie di non mostrare al pubblico (per esempio prodotti momentaneamente non disponibili).
+
+- ##### AGGIUNGERE O MODIFICARE PIATTO
+![Alt text](./Deliveboo7/screenshots/new_dish.png?raw=true "new_dish")
+
+Il ristoratore può aggiungere nuovi piatti al suo menu o modificare quelli già esistenti.
+
+- ##### LISTA ORINI RICEVUTI
+![Alt text](./Deliveboo7/screenshots/orders.png?raw=true "orders")
+
+Il ristoratore ha accesso alla lista degli ordini ricevuti, divisi tra quelli in elaborazione, quelli rifiutati e quelli già evasi. Può dichiarare evaso un ordine in elaborazione e viceversa riportare in elaborazione un ordine precedentemente dichiarato evaso.
+
+- ##### STATISTICHE
+![Alt text](./Deliveboo7/screenshots/stats.png?raw=true "stats")
+
+Il ristoratore può consultare la pagina dedicata a svariate statistiche riguardanti la sua attività. Le statistiche sono state integrate grazie a [Chart.js](https://www.chartjs.org/).
+
+- ##### MAIL DI CONFERMA AL RISTORATORE
+![Alt text](./Deliveboo7/screenshots/mail_owner.png?raw=true "mail_owner")
+
+Quando un cliente effettua un ordine ed il suo pagamento va buon fine, il ristoratore riceve una mail con il riepilogo dell'ordine.
+
+---
+
