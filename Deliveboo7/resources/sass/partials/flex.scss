@@ -1,0 +1,62 @@
+/* regole flex */
+.flex {
+  display: flex;
+}
+
+.flex_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_col_rev {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.just_start {
+  justify-content: flex-start;
+}
+
+.just_cen {
+  justify-content: center;
+}
+
+.just_around {
+  justify-content: space-around;
+}
+
+.just_end {
+  justify-content: flex-end;
+}
+
+.space_bet {
+  justify-content: space-between;
+}
+
+.align_start {
+  align-items: flex-start;
+}
+
+.align_cen {
+  align-items: center;
+}
+
+.align_end {
+  align-items: flex-end;
+}
+
+* {
+  flex-grow: 0;
+  flex-shrink: 0;
+}

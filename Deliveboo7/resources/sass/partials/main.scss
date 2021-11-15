@@ -1,0 +1,558 @@
+main {
+    margin-top: 85px;
+    background-color: $yellow;
+
+    #mainPage {
+        text-align: center;
+
+        .restaurant_card {
+            margin: 20px 10px;
+            padding: 0;
+            background-color: $yellow;
+            height: 220px;
+            border-radius: 20px;
+            cursor: pointer;
+
+            img {
+                height: 100%;
+                width: 100%;
+                border: solid 2px $blue;
+                border-radius: 20px;
+            }
+
+            h4 {
+                left: 50%;
+                bottom: -10px;
+                transform: translateX(-50%);
+                padding: 0 5px;
+                color: $green;
+                text-shadow: 1px 1px 1px #264653;
+                background-color: $yellow;
+                border: solid 1px $blue;
+                border-radius: 10px;
+                -webkit-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+                -moz-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+                box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+            }
+        } // fine restaurant_card
+
+        // #myrestaurant {
+        //     padding: 15x;
+        //     background-color: $orange;
+        //     border-bottom: 2px solid $blue;
+
+        //     i {
+        //         font-size: inherit;
+        //     }
+        // }
+
+        #myjumbotron {
+            padding: 20px 0;
+            height: auto;
+            min-height: calc(100vh - 85px);
+            background: rgb(42, 157, 143);
+            background: linear-gradient(
+                0deg,
+                rgba(42, 157, 143, 1) 0%,
+                rgba(244, 162, 97, 1) 37%,
+                rgba(233, 196, 106, 1) 69%
+            );
+
+            .mycontainer {
+                .title {
+                    margin-bottom: 30px;
+                    width: 100%;
+                }
+
+                .jumbotron_container {
+                    //height: 550px;
+                    width: 100%;
+
+                    .jumbotron_search {
+                        margin: 5px;
+                        padding: 15px;
+                        width: 35%;
+                        background-color: $blue;
+                        border-radius: 10px;
+                        -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                        -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                        box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+                        input {
+                            padding: 10px;
+                            width: 95%;
+                            font-size: $text_big;
+                            background-image: url("/storage/images/search.png");
+                            background-position: 95% 40%;
+                            background-size: 35px 35px;
+                            background-repeat: no-repeat;
+                            border: solid 2px white;
+                            border-radius: 10px;
+                            -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+
+                            &:focus {
+                                border: solid 2px $red;
+                            }
+
+                            &:disabled {
+                                background: $disabled;
+                            }
+                        }
+
+                        label {
+                            font-size: $text_big;
+                            color: $yellow;
+                        }
+
+                        h6 {
+                            margin-top: 5px;
+                            color: $light;
+                        }
+
+                        button {
+                            margin-top: 25px;
+                            padding: 10px 15px;
+                            width: 50%;
+                            font-size: $text_big;
+                            background-color: $yellow;
+                            border: solid 2px $red;
+                            border-radius: 10px;
+                            -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+
+                            &:hover {
+                                background-color: $red;
+                                border: solid 2px $yellow;
+                            }
+                        }
+
+                        .chekbox_container {
+                            ul {
+                                margin: 0;
+
+                                li {
+                                    width: 140px;
+
+                                    .control {
+                                        position: relative;
+                                        margin: 10px;
+                                        margin-bottom: 15px;
+                                        padding-top: 1px;
+                                        padding-left: 25px;
+                                        //width: 110px;
+                                        text-align: left;
+                                        font-size: $text_big;
+                                        font-weight: normal;
+                                        color: $light;
+                                        display: block;
+                                        cursor: pointer;
+
+                                        input {
+                                            position: absolute;
+                                            z-index: -1;
+                                            opacity: 0;
+                                        }
+                                    }
+
+                                    .control_indicator {
+                                        position: absolute;
+                                        top: 10px;
+                                        left: 0;
+                                        height: 20px;
+                                        width: 20px;
+                                        background: $yellow;
+                                        border-radius: 5px;
+                                    }
+
+                                    .control:hover input ~ .control_indicator,
+                                    .control input:focus ~ .control_indicator {
+                                        background: $red;
+                                    }
+
+                                    .control input:checked ~ .control_indicator {
+                                        background: #2a9d8f;
+                                    }
+
+                                    .control:hover input:not([disabled]):checked ~ .control_indicator,
+                                    .control input:checked:focus ~ .control_indicator {
+                                        background: #2a9d8f;
+                                    }
+
+                                    .control input:disabled ~ .control_indicator {
+                                        background: $disabled;
+                                        opacity: 0.6;
+                                        pointer-events: none;
+                                    }
+
+                                    .control_indicator:after {
+                                        box-sizing: unset;
+                                        content: "";
+                                        position: absolute;
+                                        display: none;
+                                    }
+
+                                    .control input:checked ~ .control_indicator:after {
+                                        display: block;
+                                    }
+
+                                    .control-checkbox .control_indicator:after {
+                                        left: 6px;
+                                        top: 2px;
+                                        width: 5px;
+                                        height: 10px;
+                                        border: solid #ffffff;
+                                        border-width: 0 3px 3px 0;
+                                        transform: rotate(45deg);
+                                    }
+
+                                    .control-checkbox input:disabled ~ .control_indicator:after {
+                                        border-color: #7b7b7b;
+                                    }
+
+                                    .control-checkbox .control_indicator::before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 4.444rem;
+                                        height: 4.018rem;
+                                        margin-left: -1.3rem;
+                                        margin-top: -1.3rem;
+                                        background: #e76f51;
+                                        border-radius: 3rem;
+                                        opacity: 0.6;
+                                        z-index: 99999;
+                                        transform: scale(0);
+                                    }
+
+                                    @keyframes s-ripple {
+                                        0% {
+                                            transform: scale(0);
+                                        }
+                                        20% {
+                                            transform: scale(1);
+                                        }
+                                        100% {
+                                            opacity: 0;
+                                            transform: scale(1);
+                                        }
+                                    }
+
+                                    @keyframes s-ripple-dup {
+                                        0% {
+                                            transform: scale(0);
+                                        }
+                                        30% {
+                                            transform: scale(1);
+                                        }
+                                        60% {
+                                            transform: scale(1);
+                                        }
+                                        100% {
+                                            opacity: 0;
+                                            transform: scale(1);
+                                        }
+                                    }
+
+                                    .control-checkbox input + .control_indicator::before {
+                                        animation: s-ripple 250ms ease-out;
+                                    }
+
+                                    .control-checkbox input:checked + .control_indicator::before {
+                                        animation-name: s-ripple-dup;
+                                    }
+                                } //fine li
+                            } //fine ul
+                        } // fine blocco checkbox
+                    } // fine jumbotron_search
+
+                    .picture {
+                        margin-left: 30px;
+                        height: 400px;
+                        width: 65%;
+
+                        .jumbotron_casa {
+                            width: 500px;
+                            top: 0;
+                            left: 10%;
+                        }
+
+                        .jumbotron_moto {
+                            width: 270px;
+                            left: 45%;
+                            bottom: 0;
+                            animation-duration: 2s;
+                        }
+                    }
+                }
+            }
+        } //fine section myjumbotron
+
+        //sezione filtered_restaurants
+        #filtered_restaurants {
+            background-color: $green;
+            padding: 0 0 20px 0;
+
+            ul {
+                width: 100%;
+
+                li {
+                    width: calc(100% / 3);
+                }
+            }
+        } // fine sezione filtered_restaurants
+
+        //sezione ristoranti
+        #restaurants {
+            padding: 30px 0;
+            -webkit-box-shadow: inset 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+            -moz-box-shadow: inset 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+            box-shadow: inset 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+
+            h2 {
+                color: $red;
+                text-shadow: 2px 2px 2px rgba(50, 50, 50, 0.91);
+            }
+
+            .restaurants_carousel {
+                .restaurant_card {
+                    margin: 0;
+                    padding: 10px;
+                    background-color: $yellow;
+                    height: 200px;
+                    width: 200px;
+
+                    h4 {
+                        bottom: 0;
+                    }
+                }
+            }
+        } //fine sezione ristoranti
+    } // fine #mainPage
+} // fine main
+
+// VERSIONE EXTRA SMALL DEVICES
+@media all and (max-width: 576px) {
+    main {
+        #mainPage {
+            .restaurant_card {
+                height: 170px;
+            }
+
+            #myjumbotron {
+                height: auto;
+                padding: 15px 0;
+
+                .mycontainer {
+                    .jumbotron_container {
+                        flex-direction: column-reverse;
+                        height: auto;
+
+                        .jumbotron_search {
+                            width: 100%;
+                            margin: 5px;
+
+                            input {
+                                padding: 3px;
+                                font-size: $text_medium;
+                                background-size: 25px 25px;
+                            }
+
+                            .chekbox_container {
+                                ul {
+                                    margin: 0;
+
+                                    li {
+                                        width: 110px;
+
+                                        .control {
+                                            font-size: $text_medium;
+                                        }
+
+                                        .control_indicator {
+                                            top: 5px;
+                                        }
+                                    } //fine li
+                                } //fine ul
+                            } // fine blocco checkbox
+                        }
+
+                        .picture {
+                            margin: 0;
+                            height: 210px;
+                            width: 280px;
+
+                            .jumbotron_casa {
+                                height: 170px;
+                                width: auto;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+
+                            .jumbotron_moto {
+                                width: 135px;
+                                animation: none;
+                            }
+                        } //fine picture
+                    } //fine jumbotron_container
+                } // fine mycontainer
+            } //fine section myjumbotron
+
+            #filtered_restaurants {
+                padding: 15px;
+
+                ul {
+                    li {
+                        margin: auto;
+                        width: 80%;
+                        max-width: 300px;
+                    }
+                }
+
+                .restaurant_card {
+                    padding: 0;
+                }
+            } // fine sezione filtered_restaurants
+
+            #restaurants {
+                padding: 15px 0;
+
+                .restaurant_card {
+                    max-width: 300px;
+                }
+
+                // .restaurants_carousel {
+                //     margin: auto;
+                //     max-width: 300px;
+                // }
+            }
+        } // fine #mainPage
+    } // fine main
+}
+
+// VERSIONE SMALL DEVICES
+@media all and (min-width: 577px) and (max-width: 767px) {
+    main {
+        #mainPage {
+            .restaurant_card {
+                height: 170px;
+            }
+
+            #myjumbotron {
+                .mycontainer {
+                    .jumbotron_container {
+                        flex-direction: column-reverse;
+                        height: auto;
+
+                        .jumbotron_search {
+                            margin: 0;
+                            width: 100%;
+
+                            .chekbox_container {
+                                ul {
+                                    margin: 0;
+
+                                    li {
+                                        width: 110px;
+
+                                        .control {
+                                            font-size: $text_medium;
+                                        }
+
+                                        .control_indicator {
+                                            top: 5px;
+                                        }
+                                    } //fine li
+                                } //fine ul
+                            } // fine blocco checkbox
+                        }
+
+                        .picture {
+                            margin: 0;
+                            height: 250px;
+                            width: 100%;
+
+                            .jumbotron_casa {
+                                height: 200px;
+                                width: auto;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+
+                            .jumbotron_moto {
+                                width: 150px;
+                                animation: none;
+                            }
+                        } //fine picture
+                    } //fine jumbotron_container
+                } // fine mycontainer
+            } //fine section myjumbotron
+
+            #filtered_restaurants {
+                ul {
+                    justify-content: space-around;
+
+                    li {
+                        width: calc(100% / 2);
+                        max-width: 300px;
+                    }
+                }
+            } // fine sezione filtered_restaurants
+
+            #restaurants {
+                padding: 15px 0;
+
+                .restaurants_carousel {
+                    //margin: auto;
+                    width: 100%;
+                }
+            }
+        } // fine #mainPage
+    } // fine main
+}
+
+// VERSIONE LARGE DEVICES
+@media all and (min-width: 768px) and (max-width: 1099px) {
+    main {
+        #mainPage {
+            .restaurant_card {
+                height: 170px;
+            }
+
+            #myjumbotron {
+                height: auto;
+                padding: 15px 0;
+
+                .mycontainer {
+                    .jumbotron_container {
+                        flex-direction: column-reverse;
+                        height: auto;
+
+                        .jumbotron_search {
+                            margin: 0;
+                            width: 100%;
+                        }
+
+                        .picture {
+                            margin: 0;
+                            width: 100%;
+
+                            .jumbotron_casa {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+
+                            .jumbotron_moto {
+                                animation: none;
+                            }
+                        } //fine picture
+                    } //fine jumbotron_container
+                } // fine mycontainer
+            } //fine section myjumbotron
+        } // fine #mainPage
+    } // fine main
+}

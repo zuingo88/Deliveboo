@@ -1,0 +1,164 @@
+#showOrders {
+    min-height: calc(100vh - 338px);
+    padding-bottom: 30px;
+    background-color: $red;
+
+    h2,
+    h5 {
+        text-align: center;
+        color: $yellow;
+        text-shadow: 2px 2px 2px #264653;
+    }
+
+    h5 {
+        margin-bottom: 20px;
+    }
+
+    .orders_container {
+        .accepted_orders_container,
+        .suspended_orders_container,
+        .refused_orders_container,
+        .processed_orders_container {
+            .status_title {
+                position: sticky;
+                top: 90px;
+                margin: 5px;
+                padding: 5px 15px;
+                color: $light;
+                background-color: $blue;
+                border: solid 1px $yellow;
+                border-radius: 10px;
+                -webkit-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+                -moz-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+                box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+
+                h4 {
+                    margin: 0;
+                }
+
+                i {
+                    color: $light;
+                }
+            }
+
+            ul {
+                width: 100%;
+
+                li {
+                    width: 48%;
+
+                    .order_card {
+                        margin: 5px 0;
+                        padding: 10px;
+                        width: 100%;
+                        background-color: $yellow;
+                        border: solid 1px $blue;
+                        border-radius: 10px;
+                        -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                        -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                        box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+                        .order_card_row {
+                            padding: 3px;
+                            width: 100%;
+                            border-bottom: 1px solid $blue;
+
+                            &:first-of-type,
+                            &:last-of-type {
+                                border: none;
+                            }
+
+                            h6 {
+                                margin: 0;
+                                display: inline-block;
+                            }
+
+                            i {
+                                margin: 5px;
+                            }
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+
+                        a {
+                            padding: 5px;
+                            width: 100%;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            color: $light;
+                            background-color: $green;
+                            border: solid 1px $blue;
+                            border-radius: 10px;
+                            -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                            cursor: pointer;
+
+                            i {
+                                margin: 5px;
+                                color: $light;
+                            }
+
+                            &:hover {
+                                color: $blue;
+
+                                i {
+                                    color: $blue;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                        .accettato,
+                        .sospeso,
+                        .pagato {
+                            background-color: $blue;
+                            border: none;
+                            border-radius: 5px;
+
+                            h6,
+                            i {
+                                color: $light;
+                            }
+                        }
+
+                        .accettato {
+                            h6:last-of-type {
+                                color: $green;
+                            }
+                        }
+
+                        .sospeso {
+                            h6:last-of-type {
+                                color: $red;
+                            }
+                        }
+                    } // fine order_card
+
+                    .order_card.processed {
+                        background-color: $light;
+                    }
+                } //fine li
+            }
+        }
+    } // fine orders_container
+} // fine #showOrders
+
+// VERSIONE SMALL ED EXTRA SMALL DEVICES
+@media all and (max-width: 767px) {
+    #showOrders {
+        .orders_container {
+            .accepted_orders_container,
+            .suspended_orders_container,
+            .refused_orders_container,
+            .processed_orders_container {
+                ul {
+                    li {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

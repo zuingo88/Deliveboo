@@ -1,0 +1,72 @@
+#braintreePay {
+    min-height: calc(100vh - 338px);
+    padding: 30px 0;
+    background-color: $blue;
+
+    h2 {
+        text-align: center;
+        color: $orange;
+        text-shadow: 2px 2px 2px rgba(50, 50, 50, 0.91);
+    }
+
+    .payment_container {
+        margin: auto;
+        padding: 10px 0;
+        width: 60%;
+        text-align: center;
+        background-color: $orange;
+        border-radius: 20px;
+        -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+        -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+        box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+        h5 {
+            margin: 0;
+            text-align: center;
+            color: $blue;
+        }
+
+        .braintree-option__paypal {
+            display: none;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            color: $light;
+            background-color: $blue;
+            border: solid 2px $green;
+            border-radius: 10px;
+            -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+
+            i {
+                color: $light;
+            }
+
+            &:hover {
+                color: $light;
+                background-color: $green;
+                border: solid 2px $blue;
+
+                i {
+                    color: $light;
+                }
+            }
+        }
+    } // fine order_container
+} // fine braintreePay
+
+// VERSIONE SMALL ED EXTRA SMALL DEVICES
+@media all and (max-width: 767px) {
+    #braintreePay {
+        .payment_container {
+            width: 90%;
+
+            button {
+                padding: 5px;
+            }
+        }
+    }
+}

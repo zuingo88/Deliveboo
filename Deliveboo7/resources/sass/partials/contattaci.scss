@@ -1,0 +1,83 @@
+#contattaci{
+  height:calc(100% -282px);
+  .mycontainer{
+    h1{
+      margin-top: 30px;
+    }
+    .container-box{
+      padding:  40px 0;
+      .boxQuestion{
+        width: 30%;
+        //border: 1px solid black;
+        .questionOne{
+        background-color: $yellow;
+         border-bottom: 1px solid $blue;
+         padding: 4px 0;
+        }
+        .questionTwo{
+         background-color: $yellow;
+         border-bottom: 1px solid $blue;
+         padding-top: 20px;
+         padding-bottom: 4px;
+
+        }
+      }
+
+      .boxAnswers{
+        width: 65%;
+        //background-color: red;
+        .border-email{
+          border-bottom: 1px solid $blue;
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+@media all and (min-width: 577px) and (max-width: 767px)
+{
+  #contattaci{
+    .mycontainer{
+
+      .container-box{
+
+        .boxQuestion{
+          width: 100%;
+
+        }
+        .boxAnswers{
+          margin-top: 30px;
+          width: 100%;
+        }
+
+      }
+    }
+  }
+
+}
+
+//SMALL SMARTPHONE
+@media all and (max-width: 576px)
+{
+  #contattaci{
+    .mycontainer{
+      h1{
+        font-size: 47px;
+        text-align: center;
+      }
+      .container-box{
+
+        .boxQuestion{
+          width: 100%;
+        }
+        .boxAnswers{
+          margin-top: 30px;
+          width: 100%;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,554 @@
+#showRestaurant {
+    padding-bottom: 25px;
+    background-color: $red;
+
+    // carrello icona
+    .cart {
+        position: sticky;
+        position: -webkit-sticky; /* Safari */
+        top: 90px;
+        height: 55px;
+        width: 55px;
+        background-color: $light;
+        border: solid 2px $blue;
+        border-radius: 10px;
+        cursor: pointer;
+
+        img {
+            width: 30px;
+        }
+
+        //bollino
+        .cart_count {
+            height: 253x;
+            width: 23px;
+            top: 5px;
+            right: 5px;
+            background-color: $red;
+            border-radius: 50%;
+
+            span {
+                font-size: $text_small;
+                font-weight: bold;
+                color: white;
+            }
+        }
+    } // fine cart
+
+    //carrello blocco
+    .opened_cart {
+        position: fixed;
+        top: 85px;
+        right: 0;
+        padding: 15px;
+        height: auto;
+        max-height: calc(100vh - 90px);
+        overflow: auto;
+        width: 25%;
+        background-color: $light;
+        border: solid 1px $blue;
+        border-radius: 10px 0 0 10px;
+        -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+        -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+        box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+        .riduci {
+            padding: 3px;
+            border: solid 1px $blue;
+            border-radius: 5px;
+            cursor: pointer;
+
+            i {
+                margin: 5px;
+            }
+
+            &:hover {
+                -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            }
+        }
+
+        li {
+            margin: 5px;
+            padding: 15px;
+            background-color: $yellow;
+            border: solid 2px $blue;
+            border-radius: 10px;
+            -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+
+            h5,
+            h6 {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+                width: 100%;
+                text-transform: capitalize;
+
+                &:last-of-type {
+                    padding: 5px;
+                    background-color: $orange;
+                    border: solid 1px $blue;
+                    border-radius: 10px;
+                    -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                    -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                    box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                }
+
+                i {
+                    margin: 5px 15px;
+
+                    &:hover {
+                        scale: 1.3;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                background-color: $red;
+                border: solid 3px $blue;
+                -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            }
+        } // fine li
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            color: $light;
+            background-color: $blue;
+            border: solid 2px $green;
+            border-radius: 10px;
+            -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+            box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+
+            i {
+                color: $light;
+            }
+
+            &:hover {
+                color: $light;
+                background-color: $green;
+                border: solid 2px $blue;
+
+                i {
+                    color: $light;
+                }
+            }
+        }
+    } // fine carrello blocco
+
+    .helper_ristoratore {
+        margin: 10px;
+        padding: 15px;
+        background-color: $yellow;
+        border: solid 1px $blue;
+        border-radius: 10px;
+        -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+        -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+        box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+        h2,
+        h4 {
+            text-align: center;
+        }
+
+        h2 {
+            i {
+                font-size: inherit;
+                background-color: $red;
+                border: solid 3px $red;
+                border-radius: 50%;
+                -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .restaurant_info {
+        text-align: center;
+
+        h2,
+        h6 {
+            color: $yellow;
+            text-shadow: 2px 2px 2px #264653;
+        }
+
+        .restaurant_info_card {
+            margin-bottom: 25px;
+            width: auto;
+            max-width: 600px;
+
+            .restaurant_image {
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    border: solid 3px $blue;
+                    border-radius: 10px;
+                }
+            }
+
+            .info_card_row_container {
+                max-width: 90%;
+                border: solid 1px $yellow;
+                border-top: none;
+                border-radius: 0 0 10px 10px;
+                -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+
+                .info_card_row {
+                    padding: 5px;
+                    //max-width: 90%;
+
+                    i {
+                        margin: 5px;
+                        box-shadow: none !important;
+                    }
+
+                    h6 {
+                        flex-shrink: 1;
+                        margin: 0;
+                        display: inline-block;
+                        text-align: left;
+                    }
+                }
+            }
+        } // fine restaurant_info_card
+    }
+
+    .menu_container {
+        .restaurant_options {
+            margin-bottom: 20px;
+            width: 100%;
+            background-color: $green;
+            border-radius: 10px;
+            -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+            -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+            box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+            h6 {
+                margin: 0;
+                padding: 0;
+            }
+
+            .option_card {
+                width: 30%;
+                margin: 10px;
+                padding: 10px;
+                background-color: $yellow;
+                border: solid 1px $blue;
+                border-radius: 10px;
+                -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $blue;
+                }
+
+                &:hover i,
+                &:hover h6 {
+                    color: $light;
+                }
+
+                i:hover {
+                    color: $orange;
+                    scale: 1.5;
+                }
+            }
+        }
+
+        ul {
+            width: 100%;
+
+            li {
+                width: calc(100% / 3);
+            }
+        }
+
+        .dish_card {
+            margin: 10px;
+            padding: 15px;
+            background-color: $yellow;
+            border: solid 1px $blue;
+            border-radius: 10px;
+            -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+            -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+            box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+            .dish_title_price {
+                border-bottom: 1px solid $blue;
+
+                h5 {
+                flex-shrink: 1;
+                    margin: 0;
+                }
+
+                h6 {
+                    margin-left: 10px;
+                }
+            }
+
+            span {
+                font-weight: bold;
+            }
+
+            p,
+            i {
+                margin: 5px;
+            }
+
+            button {
+                justify-self: center;
+                margin: 5px;
+                padding: 3px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $light;
+                background-color: $green;
+                border: solid 1px $blue;
+                border-radius: 10px;
+                -webkit-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                -moz-box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.91);
+                cursor: pointer;
+
+                i {
+                    color: $light;
+                }
+
+                &:hover {
+                    border: solid 1px $yellow;
+                }
+            }
+
+            div[class*="row"] {
+                border: solid 1px $blue;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+                -moz-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+                box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+
+                a:hover {
+                    text-decoration: none;
+                }
+                i:hover {
+                    scale: 1.4;
+                }
+            }
+
+            .edit_row {
+                margin-bottom: 5px;
+            }
+
+            &:hover {
+                background-color: $blue;
+
+                .dish_title_price {
+                    border-bottom: 1px solid $light;
+                }
+
+                .dish_title_price * {
+                    color: $light;
+                }
+            }
+
+            &:hover > p,
+            &:hover span {
+                color: $light;
+            }
+
+            &:hover .edit_row {
+                color: $blue;
+                background-color: $yellow;
+            }
+
+            &:hover .delete_row {
+                color: $light;
+                background-color: $red;
+            }
+        } // fine dish_card
+
+        // dish non visibile al pubblico
+        .dish_card.chiaro {
+            background-color: $light;
+
+            // >h6 {
+            //     text-align: center;
+            // }
+
+            &:hover {
+                background-color: $light;
+
+                .dish_title_price {
+                    border-bottom: 1px solid $blue;
+                }
+
+                p,
+                span,
+                h5,
+                h6,
+                i {
+                    color: $blue;
+                }
+            }
+
+        }
+    } //fine menu_container
+} // fine #showRestaurant
+
+// VERSIONE EXTRA SMALL DEVICES
+@media all and (max-width: 576px) {
+    #showRestaurant {
+        padding-bottom: 15px;
+
+        .restaurant_info {
+            .restaurant_info_card.ristoratore {
+                flex-direction: column;
+                justify-content: center;
+
+                .info_card_row_container {
+                    border: solid 1px $yellow;
+                    border-top: none;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+        }
+
+        //carrello blocco
+        .opened_cart {
+            width: 275px;
+        }
+
+        .menu_container {
+            .restaurant_options {
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+
+                .option_card {
+                    margin: 4px;
+                    width: 95%;
+                }
+            }
+
+            ul {
+                li {
+                    width: 100%;
+                }
+            }
+
+            .dish_card {
+                p,
+                i,
+                span {
+                    margin: 5px;
+                    font-size: $text_small;
+                }
+
+                button {
+                    font-size: $text_medium;
+                }
+            } // fine dish_card
+        } //fine menu_container
+    } // fine #showRestaurant
+}
+
+// VERSIONE SMALL DEVICES
+@media all and (min-width: 577px) and (max-width: 767px) {
+    #showRestaurant {
+        padding-bottom: 15px;
+
+        .restaurant_info {
+            .restaurant_info_card.ristoratore {
+                flex-direction: column;
+                justify-content: center;
+
+                .info_card_row_container {
+                    border: solid 1px $yellow;
+                    border-top: none;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+        }
+
+        //carrello blocco
+        .opened_cart {
+            width: 275px;
+        }
+
+        .menu_container {
+            .restaurant_options {
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+
+                .option_card {
+                    margin: 5px;
+                    width: 48%;
+                }
+            }
+
+            ul {
+                li {
+                    width: 50%;
+                }
+            }
+        } //fine menu_container
+    } // fine #showRestaurant
+}
+
+// VERSIONE LARGE DEVICES
+@media all and (min-width: 768px) and (max-width: 1099px) {
+    #showRestaurant {
+        .restaurant_info {
+            .restaurant_info_card.ristoratore {
+                flex-direction: column;
+                justify-content: center;
+
+                .info_card_row_container {
+                    border: solid 1px $yellow;
+                    border-top: none;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+        }
+
+        //carrello blocco
+        .opened_cart {
+            width: 275px;
+        }
+
+        .menu_container {
+            .restaurant_options {
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+
+                .option_card {
+                    margin: 5px;
+                    width: 48%;
+                }
+            }
+
+            ul {
+                li {
+                    width: 50%;
+                }
+            }
+        } //fine menu_container
+    } // fine #showRestaurant
+}

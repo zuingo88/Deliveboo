@@ -1,0 +1,39 @@
+#statistiche {
+    background-color: $blue;
+    padding-bottom: 30px;
+
+    .mycontainer {
+        h2 {
+            text-align: center;
+            color: $yellow;
+            text-shadow: 2px 2px 2px $red;
+        }
+
+        .graph_container {
+            margin: 50px auto;
+            padding: 10px;
+            width: 60%;
+            //max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            -webkit-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+            -moz-box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+            box-shadow: 4px 4px 6px 0px rgba(50, 50, 50, 0.91);
+
+            #myChart {
+                margin: auto;
+            }
+        }
+    }
+}
+
+// VERSIONE SMALL DEVICES
+@media all and (max-width: 1099px) {
+    #statistiche {
+        .mycontainer {
+            .graph_container {
+                width: 100%;
+            }
+        }
+    }
+}

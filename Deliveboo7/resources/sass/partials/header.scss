@@ -1,0 +1,130 @@
+header {
+    position: fixed;
+    height: 85px;
+    width: 100%;
+    top: 0;
+    background-color: $green;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
+    z-index: 999;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    .mycontainer {
+        flex-direction: row;
+        height: 100%;
+
+        nav {
+            width: 100%;
+
+            .nav_left {
+                .nav_logo {
+                    a {
+                        &:hover,
+                        &:focus {
+                            text-decoration: none;
+                        }
+
+                        h3 {
+                            color: $orange;
+                            font-family: "Dela Gothic One", cursive;
+                            text-shadow: 2px 2px 2px rgba(50, 50, 50, 0.91);
+
+                            &:hover {
+                                scale: 1.1;
+                            }
+                        }
+                    }
+                }
+            } //fine nav_left
+
+            .nav_right {
+                h6 {
+                    margin: 0;
+                    color: $light;
+                }
+
+                .nav_buttons {
+                    padding: 0;
+                    color: $blue;
+
+                    ul.mynavbar {
+                        margin: 0;
+
+                        li.nav-item {
+                            margin-left: 15px;
+                            padding: 0;
+
+                            a {
+                                padding: 0;
+                                line-height: 1;
+                                font-weight: bold;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+
+                        .dropdown-menu.dropdown-menu-right {
+                            top: 10px;
+                            padding: 10px;
+                            width: auto;
+                            min-width: 0;
+                            background-color: $yellow;
+                            border: solid 1px $blue;
+                            border-radius: 5px;
+
+                            a.dropdown-item {
+                                width: auto;
+                                color: $blue;
+
+                                &:hover {
+                                    color: $light;
+                                    background-color: inherit;
+                                }
+                            }
+
+                            &:hover {
+                                background-color: $red;
+                            }
+                        }
+                    }
+                }
+            } //fine nav_right
+        } //fine nav
+    } //fine mycontainer
+} //finer header
+
+// VERSIONE SMALL ED EXTRA SMALL DEVICES
+@media all and (max-width: 767px) {
+    header {
+        .mycontainer {
+            nav {
+                .nav_right {
+                    .nav_buttons {
+                        .mynavbar {
+                            li.nav-item {
+                                margin-left: 10px;
+
+                                a {
+                                    padding: 0;
+                                    font-size: $text_medium;
+                                    font-weight: bold;
+
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } //fine nav_right
+            } //fine nav
+        } //fine mycontainer
+    } //finer header
+}

@@ -1,0 +1,105 @@
+.mycontainer{
+
+    #chiSiamo{
+
+        margin: 100px 0px;
+        img{
+            border-radius: 50%;
+        }
+    }
+
+    .chiSiamo_container{
+            margin-top: 150px;
+    }
+
+
+    .img{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin-bottom: 30px;
+    }
+
+    #mirko{
+        background-image: url("/storage/chiSiamoImg/mirko.png");
+        background-position: -20px -14px;
+        background-repeat: no-repeat;
+    }
+
+    #nata{
+        background-image: url("/storage/chiSiamoImg/fototessera.jpg");
+        background-position: 100% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #vale{
+        background-image: url("/storage/chiSiamoImg/vale.jpeg");
+        background-position: 100% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #gabbo{
+        background-image: url("/storage/chiSiamoImg/gabbo.jpg");
+        background-position: 100% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    .profile_column{
+        width: calc(100% / 4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 60px;
+        transition: 1s;
+
+        &:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+
+
+
+}
+
+// ----------------------------------------- media query---------------------
+
+// VERSIONE LARGE SMARTPHONE
+@media all and (min-width: 577px) and (max-width: 767px)
+{
+    .mycontainer{
+
+        #profile{
+
+            .profile_column{
+                width: calc(100% / 2);
+            }
+
+        }
+    }
+
+
+}
+
+//SMALL SMARTPHONE
+@media all and (max-width: 576px)
+{
+
+    .mycontainer{
+
+        #profile{
+
+            .profile_column{
+                width: 100%;
+            }
+
+        }
+    }
+
+}
