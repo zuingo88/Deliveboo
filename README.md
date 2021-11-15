@@ -1,6 +1,6 @@
-# Deliveboo-final-project
+# Deliveboo
 
-### Riproduzione web app per ordinare cibo a domicilio.
+## Riproduzione web app per ordinare cibo a domicilio.
 
 #### NAVIGAZIONE
 - [Home page](#home-page)
